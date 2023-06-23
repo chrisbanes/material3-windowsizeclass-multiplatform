@@ -1,0 +1,12 @@
+language = Objective-C
+package = androidx.compose.material3.windowsizeclass.objc
+---
+
+#import <Foundation/Foundation.h>
+
+@protocol KeyValueObserver
+- (void)observeValueForKeyPath:(NSString *)keyPath
+    ofObject:(id)object
+    change:(NSDictionary<NSKeyValueChangeKey, id> *)change
+    context:(void *)context;
+@end
