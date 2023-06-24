@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.chrisbanes.material3-windowsizeclass.sample.android"
+    namespace = "dev.chrisbanes.material3.windowsizeclass.sample.android"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "dev.chrisbanes.material3-windowsizeclass.sample.android"
+        applicationId = "dev.chrisbanes.material3.windowsizeclass.sample.android"
         minSdk = 24
         targetSdk = 33
 
@@ -29,5 +29,5 @@ android {
 
 dependencies {
     implementation(project(":sample:shared"))
-    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.activity:activity-compose:1.7.2")
 }

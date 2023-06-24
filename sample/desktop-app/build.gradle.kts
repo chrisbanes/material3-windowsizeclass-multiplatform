@@ -16,7 +16,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "dev.chrisbanes.material3-windowsizeclass.sample.desktop"
+            packageName = "dev.chrisbanes.material3.windowsizeclass.sample.desktop"
             packageVersion = "1.0.0"
         }
     }

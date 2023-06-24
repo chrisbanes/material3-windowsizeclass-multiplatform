@@ -1,4 +1,4 @@
-package com.example.androidsample
+package dev.chrisbanes.material3.windowsizeclass.sample.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
