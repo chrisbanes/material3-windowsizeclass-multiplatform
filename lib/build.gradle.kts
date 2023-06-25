@@ -5,6 +5,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
+    id("com.vanniktech.maven.publish")
 }
 
 @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -66,6 +67,6 @@ android {
     namespace = "androidx.compose.material3.windowsizeclass"
     compileSdk = 33
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
     }
 }
