@@ -25,13 +25,11 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 
 /**
- * Calculates the window's [WindowSizeClass] for the provided [activity].
+ * Calculates the window's [WindowSizeClass].
  *
- * A new [WindowSizeClass] will be returned whenever a configuration change causes the width or
+ * A new [WindowSizeClass] will be returned whenever a change causes the width or
  * height of the window to cross a breakpoint, such as when the device is rotated or the window
  * is resized.
- *
- * @sample androidx.compose.material3.windowsizeclass.samples.AndroidWindowSizeClassSample
  */
 @ExperimentalMaterial3WindowSizeClassApi
 @Composable
@@ -45,7 +43,7 @@ expect fun calculateWindowSizeClass(): WindowSizeClass
  * WindowSizeClass contains a [WindowWidthSizeClass] and [WindowHeightSizeClass], representing the
  * window size classes for this window's width and height respectively.
  *
- * See [calculateWindowSizeClass] to calculate the WindowSizeClass for an Activity's current window
+ * See [calculateWindowSizeClass] to calculate the WindowSizeClass.
  *
  * @property widthSizeClass width-based window size class ([WindowWidthSizeClass])
  * @property heightSizeClass height-based window size class ([WindowHeightSizeClass])
@@ -56,14 +54,6 @@ class WindowSizeClass private constructor(
     val heightSizeClass: WindowHeightSizeClass,
 ) {
     companion object {
-        /**
-         * Calculates [WindowSizeClass] for a given [size]. Should be used for testing purposes only
-         * - to calculate a [WindowSizeClass] for the Activity's current window see
-         * [calculateWindowSizeClass].
-         *
-         * @param size of the window
-         * @return [WindowSizeClass] corresponding to the given width and height
-         */
         @ExperimentalMaterial3WindowSizeClassApi
         internal fun calculateFromSize(size: DpSize): WindowSizeClass {
             val windowWidthSizeClass = WindowWidthSizeClass.fromWidth(size.width)
@@ -171,7 +161,7 @@ value class WindowWidthSizeClass private constructor(private val value: Int) :
          * The standard set of size classes. It's supposed to include all size classes and will be
          * expanded whenever a new size class is defined. By default
          * [WindowSizeClass.calculateFromSize] will only return size classes in [DefaultSizeClasses]
-         * in order to avoid behaviral changes when new size classes are added. You can opt in to
+         * in order to avoid behavioral changes when new size classes are added. You can opt in to
          * support all available size classes by doing:
          * ```
          * WindowSizeClass.calculateFromSize(
