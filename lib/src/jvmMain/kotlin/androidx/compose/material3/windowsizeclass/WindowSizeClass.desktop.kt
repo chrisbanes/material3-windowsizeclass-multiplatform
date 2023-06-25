@@ -31,7 +31,8 @@ actual fun calculateWindowSizeClass(): WindowSizeClass {
         // to poll Window.getWindows(). This might not work in all situations.
         while (isActive) {
             window = Window.getWindows().firstOrNull { it.isActive }
-            delay(1000)
+            // Delay for the next poll. If we haven't got a window yet, poll quicker.
+            delay(if (window == null) 50 else 1000)
         }
     }
 
