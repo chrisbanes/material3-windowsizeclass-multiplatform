@@ -3,6 +3,7 @@
 .idea
 .DS_Store
 build
+bin
 captures
 .externalNativeBuild
 .cxx

@@ -47,9 +47,9 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.sampleshared"
+    namespace = "dev.chrisbanes.material3.windowsizeclass.sample"
     compileSdk = 33
     defaultConfig {
-        minSdk = 24
+        minSdk = 21
     }
 }

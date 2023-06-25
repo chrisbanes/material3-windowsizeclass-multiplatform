@@ -1,6 +1,7 @@
 // Copyright 2023, Christopher Banes and the project contributors
 // SPDX-License-Identifier: Apache-2.0
 
+
 plugins {
     id("com.android.library") version "8.0.2" apply false
     id("com.android.application") version "8.0.2" apply false
@@ -13,7 +14,7 @@ plugins {
     id("com.vanniktech.maven.publish") version "0.25.2"
 }
 
-subprojects {
+allprojects {
     apply(plugin = "com.diffplug.spotless")
 
     spotless {

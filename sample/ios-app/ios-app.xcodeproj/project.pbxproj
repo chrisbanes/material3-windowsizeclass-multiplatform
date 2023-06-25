@@ -308,7 +308,7 @@
 					"-framework",
 					shared,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.chrisbanes.material3.windowsizeclass.sample.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chrisbanes.material3.windowsizeclass.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -351,7 +351,7 @@
 					"-framework",
 					shared,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.chrisbanes.material3.windowsizeclass.sample.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.chrisbanes.material3.windowsizeclass.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
