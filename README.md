@@ -11,7 +11,7 @@ The `androidx.compose.material3:material3-window-size-class` library is availabl
 | Android       | ✅         |     |
 | iOS           | ✅         |     |
 | Desktop (JVM) | ✅         | It's a bit hacky 😅 |
-| Web           |           |  #8     |
+| Web           |           |  [#8](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/issues/8)     |
 
 ## Usage
 
