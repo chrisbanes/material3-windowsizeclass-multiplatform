@@ -1,9 +1,5 @@
-//
-//  ios_appApp.swift
-//  ios-app
-//
-//  Created by Chris Banes on 20/06/2023.
-//
+// Copyright 2023, Christopher Banes and the project contributors
+// SPDX-License-Identifier: Apache-2.0
 
 import SwiftUI
 
