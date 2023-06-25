@@ -25,8 +25,6 @@ import platform.darwin.NSObject
 @ExperimentalMaterial3WindowSizeClassApi
 @Composable
 actual fun calculateWindowSizeClass(): WindowSizeClass {
-    // TODO detect frame size changes
-    //
     val uiViewController = LocalUIViewController.current
     var size by remember { mutableStateOf(uiViewController.getViewFrameSize()) }
 
