@@ -9,12 +9,12 @@ plugins {
 }
 
 android {
-    namespace = "dev.chrisbanes.material3.windowsizeclass.sample.android"
+    namespace = "dev.chrisbanes.material3.windowsizeclass.sample"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "dev.chrisbanes.material3.windowsizeclass.sample.android"
-        minSdk = 24
+        applicationId = "dev.chrisbanes.material3.windowsizeclass.sample"
+        minSdk = 21
         targetSdk = 33
 
         versionCode = 1
