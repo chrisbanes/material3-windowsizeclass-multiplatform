@@ -1,3 +1,6 @@
+// Copyright 2023, Christopher Banes and the project contributors
+// SPDX-License-Identifier: Apache-2.0
+
 plugins {
     id("com.android.library") version "8.0.2" apply false
     id("com.android.application") version "8.0.2" apply false
@@ -19,12 +22,26 @@ subprojects {
             targetExclude("$buildDir/**/*.kt")
             targetExclude("bin/**/*.kt")
             ktlint()
+
+            licenseHeaderFile(rootProject.file("spotless/cb-copyright.txt"))
+                .named("cb-existing")
+                .onlyIfContentMatches("Copyright \\d+,* Christopher Banes")
+            licenseHeaderFile(rootProject.file("spotless/cb-copyright.txt"))
+                .named("cb-none")
+                .onlyIfContentMatches("^(?!// Copyright).*\$")
         }
 
         kotlinGradle {
             target("**/*.kts")
             targetExclude("$buildDir/**/*.kts")
             ktlint()
+
+            licenseHeaderFile(rootProject.file("spotless/cb-copyright.txt"), "(^(?![\\/ ]\\**).*$)")
+                .named("cb-existing")
+                .onlyIfContentMatches("Copyright \\d+,* Christopher Banes")
+            licenseHeaderFile(rootProject.file("spotless/cb-copyright.txt"), "(^(?![\\/ ]\\**).*$)")
+                .named("cb-none")
+                .onlyIfContentMatches("^(?!// Copyright).*\$")
         }
     }
 }
