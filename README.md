@@ -6,12 +6,12 @@ The [Material 3 Window size classes](https://m3.material.io/foundations/layout/a
 
 The `androidx.compose.material3:material3-window-size-class` library is available for Jetpack Compose, but it is not currently available for Compose Multiplatform. This library changes that, by providing the [WindowSizeClass](https://developer.android.com/reference/kotlin/androidx/compose/material3/windowsizeclass/WindowSizeClass) for many of the platforms supported by Compose Multiplatform.
 
-| Platform      | Supported |  Sample     |  Notes    |
-|---------------|-----------|------------|-----------| 
-| Android       | ✅         | [android-app](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/tree/main/sample/android-app)    |     |
-| iOS           | ✅         | [ios-app](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/tree/main/sample/ios-app)    |     |
-| Desktop (JVM) | ✅         | [desktop-app](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/tree/main/sample/desktop-app)    | It's a bit hacky 😅 |
-| Web           | Not yet: [#8](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/issues/8)          |     |     |
+| Platform      | Supported |  Sample    |
+|---------------|-----------|------------|
+| Android       | ✅         | [android-app](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/tree/main/sample/android-app)    |
+| iOS           | ✅         | [ios-app](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/tree/main/sample/ios-app)    |
+| Desktop (JVM) | ✅         | [desktop-app](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/tree/main/sample/desktop-app)    |
+| Web           | Not yet: [#8](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/issues/8)          |     |
 
 ## Usage
 
@@ -37,7 +37,7 @@ You'll note that I have kept the package name the same as that in AndroidX. This
 ```kotlin
 val commonMain by getting {
     dependencies {
-        implementation("dev.chrisbanes.material3:material3-window-size-class-multiplatform:0.1.0")
+        implementation("dev.chrisbanes.material3:material3-window-size-class-multiplatform:0.2.0")
     }
 }
 ```
