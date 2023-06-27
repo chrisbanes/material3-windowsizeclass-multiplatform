@@ -27,6 +27,8 @@ actual fun calculateWindowSizeClass(): WindowSizeClass {
 
     // Add a listener and listen for componentResized events
     DisposableEffect(window) {
+        window?.let { size = it.getDpSize() }
+
         val listener = object : ComponentAdapter() {
             override fun componentResized(event: ComponentEvent) {
                 size = window!!.getDpSize()
