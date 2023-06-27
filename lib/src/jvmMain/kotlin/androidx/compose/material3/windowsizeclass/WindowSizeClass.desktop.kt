@@ -23,12 +23,10 @@ import java.awt.event.ComponentEvent
 @Composable
 actual fun calculateWindowSizeClass(): WindowSizeClass {
     val window: Window? = LocalWindow.current
-    var size by remember { mutableStateOf(DpSize.Zero) }
+    var size by remember { mutableStateOf(window?.getDpSize() ?: DpSize.Zero) }
 
     // Add a listener and listen for componentResized events
     DisposableEffect(window) {
-        window?.let { size = it.getDpSize() }
-
         val listener = object : ComponentAdapter() {
             override fun componentResized(event: ComponentEvent) {
                 size = window!!.getDpSize()
