@@ -26,11 +26,14 @@ import platform.darwin.NSObject
 @Composable
 actual fun calculateWindowSizeClass(): WindowSizeClass {
     val uiViewController = LocalUIViewController.current
-    var size by remember { mutableStateOf(uiViewController.getViewFrameSize()) }
+
+    var windowSizeClass by remember(uiViewController) {
+        mutableStateOf(WindowSizeClass.calculateFromSize(uiViewController.getViewFrameSize()))
+    }
 
     DisposableEffect(uiViewController) {
         val observer = ObserverObject {
-            size = uiViewController.getViewFrameSize()
+            windowSizeClass = WindowSizeClass.calculateFromSize(uiViewController.getViewFrameSize())
         }
 
         uiViewController.view.layer.addObserver(
@@ -48,7 +51,7 @@ actual fun calculateWindowSizeClass(): WindowSizeClass {
         }
     }
 
-    return WindowSizeClass.calculateFromSize(size)
+    return windowSizeClass
 }
 
 private fun UIViewController.getViewFrameSize(): DpSize = view.frame().useContents {
