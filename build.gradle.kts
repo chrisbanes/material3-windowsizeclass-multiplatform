@@ -11,7 +11,7 @@ plugins {
     id("org.jetbrains.compose") version "1.4.1" apply false
 
     id("com.diffplug.spotless") version "6.19.0"
-    id("com.vanniktech.maven.publish") version "0.25.2"
+    id("com.vanniktech.maven.publish") version "0.25.3"
 }
 
 allprojects {
