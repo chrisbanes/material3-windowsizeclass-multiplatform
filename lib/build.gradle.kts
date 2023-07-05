@@ -38,6 +38,10 @@ kotlin {
         }
     }
 
+    js(IR) {
+        browser()
+    }
+
     configure(targets) {
         if (this is KotlinNativeTarget && konanTarget.family.isAppleFamily) {
             compilations.getByName("main") {
