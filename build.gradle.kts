@@ -15,6 +15,12 @@ plugins {
 }
 
 allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    }
+
     apply(plugin = "com.diffplug.spotless")
 
     spotless {
