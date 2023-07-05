@@ -4,7 +4,7 @@
 @file:Suppress(
     "INVISIBLE_MEMBER",
     "INVISIBLE_REFERENCE",
-    "EXPOSED_PARAMETER_TYPE"
+    "EXPOSED_PARAMETER_TYPE",
 ) // WORKAROUND: ComposeWindow and ComposeLayer are internal
 
 package androidx.compose.material3.windowsizeclass
