@@ -14,6 +14,7 @@ import androidx.compose.ui.interop.LocalUIViewController
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import kotlinx.cinterop.COpaquePointer
+import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.ExportObjCClass
 import kotlinx.cinterop.useContents
 import platform.Foundation.NSKeyValueObservingOptionNew
@@ -22,6 +23,7 @@ import platform.Foundation.removeObserver
 import platform.UIKit.UIViewController
 import platform.darwin.NSObject
 
+@OptIn(ExperimentalForeignApi::class)
 @ExperimentalMaterial3WindowSizeClassApi
 @Composable
 actual fun calculateWindowSizeClass(): WindowSizeClass {
@@ -54,11 +56,13 @@ actual fun calculateWindowSizeClass(): WindowSizeClass {
     return windowSizeClass
 }
 
+@OptIn(ExperimentalForeignApi::class)
 private fun UIViewController.getViewFrameSize(): DpSize = view.frame().useContents {
     // iOS returns density independent pixels, rather than raw pixels
     DpSize(size.width.dp, size.height.dp)
 }
 
+@OptIn(ExperimentalForeignApi::class)
 @ExportObjCClass
 private class ObserverObject(
     private val onChange: () -> Unit,
