@@ -9,6 +9,8 @@ captures
 .cxx
 local.properties
 
+kotlin-js-store/
+
 #######################################################################################
 # From https://github.com/github/gitignore/blob/main/Swift.gitignore
 #######################################################################################
