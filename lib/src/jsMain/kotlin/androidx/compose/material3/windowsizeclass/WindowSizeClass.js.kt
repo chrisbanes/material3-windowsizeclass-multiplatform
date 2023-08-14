@@ -15,8 +15,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.DpSize
-import androidx.compose.ui.unit.dp
 import kotlinx.browser.window
 import org.w3c.dom.Window
 import org.w3c.dom.events.Event
@@ -24,16 +25,16 @@ import org.w3c.dom.events.Event
 @ExperimentalMaterial3WindowSizeClassApi
 @Composable
 actual fun calculateWindowSizeClass(): WindowSizeClass {
-    val window = remember { window }
+    val density = LocalDensity.current
 
-    var windowSizeClass by remember(window) {
-        mutableStateOf(WindowSizeClass.calculateFromSize(window.getDpSize()))
+    var windowSizeClass by remember {
+        mutableStateOf(WindowSizeClass.calculateFromSize(window.getDpSize(density)))
     }
 
     // Add a listener and listen for resize events
-    DisposableEffect(window) {
+    DisposableEffect(density) {
         val callback: (Event) -> Unit = {
-            windowSizeClass = WindowSizeClass.calculateFromSize(window.getDpSize())
+            windowSizeClass = WindowSizeClass.calculateFromSize(window.getDpSize(density))
         }
 
         window.addEventListener("resize", callback)
@@ -46,4 +47,6 @@ actual fun calculateWindowSizeClass(): WindowSizeClass {
     return windowSizeClass
 }
 
-private fun Window.getDpSize(): DpSize = DpSize(innerWidth.dp, innerHeight.dp)
+private fun Window.getDpSize(density: Density): DpSize = with(density) {
+    DpSize(innerWidth.toDp(), innerHeight.toDp())
+}
