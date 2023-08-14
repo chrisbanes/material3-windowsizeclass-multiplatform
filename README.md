@@ -32,7 +32,7 @@ You'll note that I have kept the package name the same as that in AndroidX. This
 
 ## Download
 
-[![Maven Central](https://img.shields.io/maven-central/v/dev.chrisbanes.material3/material3-window-size-class-multiplatform)](https://search.maven.org/search?q=g:dev.chrisbanes.material3)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.chrisbanes.material3/material3-window-size-class-multiplatform)](https://central.sonatype.com/namespace/dev.chrisbanes.material3)
 
 ```kotlin
 val commonMain by getting {
