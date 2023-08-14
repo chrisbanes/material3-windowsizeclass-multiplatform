@@ -1,12 +1,6 @@
 // Copyright 2023, Christopher Banes and the project contributors
 // SPDX-License-Identifier: Apache-2.0
 
-@file:Suppress(
-    "INVISIBLE_MEMBER",
-    "INVISIBLE_REFERENCE",
-    "EXPOSED_PARAMETER_TYPE",
-) // WORKAROUND: ComposeWindow and ComposeLayer are internal
-
 package androidx.compose.material3.windowsizeclass
 
 import androidx.compose.runtime.Composable
