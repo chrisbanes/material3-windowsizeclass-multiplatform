@@ -37,7 +37,7 @@ You'll note that I have kept the package name the same as that in AndroidX. This
 ```kotlin
 val commonMain by getting {
     dependencies {
-        implementation("dev.chrisbanes.material3:material3-window-size-class-multiplatform:0.2.0")
+        implementation("dev.chrisbanes.material3:material3-window-size-class-multiplatform:0.3.0")
     }
 }
 ```
