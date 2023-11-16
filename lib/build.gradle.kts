@@ -67,7 +67,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("com.willowtreeapps.assertk:assertk:0.26.1")
+                implementation("com.willowtreeapps.assertk:assertk:0.27.0")
             }
         }
     }
