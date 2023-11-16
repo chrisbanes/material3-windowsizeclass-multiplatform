@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -12,12 +11,11 @@ plugins {
     id("com.vanniktech.maven.publish")
 }
 
-@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    applyDefaultHierarchyTemplate()
 
     jvm()
-    android {
+    androidTarget {
         publishLibraryVariants("release")
 
         compilations.all {
@@ -60,7 +58,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.window:window:1.1.0")
+                implementation("androidx.window:window:1.2.0")
             }
         }
 
@@ -75,7 +73,7 @@ kotlin {
 
 android {
     namespace = "androidx.compose.material3.windowsizeclass"
-    compileSdk = 33
+    compileSdk = 34
     defaultConfig {
         minSdk = 21
     }
