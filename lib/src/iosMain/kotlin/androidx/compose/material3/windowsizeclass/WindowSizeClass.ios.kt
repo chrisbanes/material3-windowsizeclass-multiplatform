@@ -13,6 +13,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.interop.LocalUIViewController
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.COpaquePointer
 import kotlinx.cinterop.ExperimentalForeignApi
 import kotlinx.cinterop.ExportObjCClass
@@ -62,7 +63,7 @@ private fun UIViewController.getViewFrameSize(): DpSize = view.frame().useConten
     DpSize(size.width.dp, size.height.dp)
 }
 
-@OptIn(ExperimentalForeignApi::class)
+@OptIn(ExperimentalForeignApi::class, BetaInteropApi::class)
 @ExportObjCClass
 private class ObserverObject(
     private val onChange: () -> Unit,

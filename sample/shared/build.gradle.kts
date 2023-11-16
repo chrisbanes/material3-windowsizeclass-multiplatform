@@ -2,21 +2,18 @@
 // SPDX-License-Identifier: Apache-2.0
 
 
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
-
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
 }
 
-@OptIn(ExperimentalKotlinGradlePluginApi::class)
 kotlin {
-    targetHierarchy.default()
+    applyDefaultHierarchyTemplate()
 
     jvm()
 
-    android {
+    androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
@@ -35,7 +32,6 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
-            // Compose MP requires us to use static frameworks
             isStatic = true
         }
     }
@@ -51,8 +47,8 @@ kotlin {
 }
 
 android {
-    namespace = "dev.chrisbanes.material3.windowsizeclass.sample"
-    compileSdk = 33
+    namespace = "dev.chrisbanes.material3.windowsizeclass.sample.shared"
+    compileSdk = 34
     defaultConfig {
         minSdk = 21
     }
