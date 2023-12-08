@@ -20,7 +20,6 @@ kotlin {
             commonWebpackConfig {
                 outputFileName = "sample.js"
             }
-
         }
 
         binaries.executable()
