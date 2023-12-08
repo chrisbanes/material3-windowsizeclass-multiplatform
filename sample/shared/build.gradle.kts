@@ -21,7 +21,8 @@ kotlin {
         }
     }
 
-    js(IR) {
+    @Suppress("OPT_IN_USAGE")
+    wasmJs {
         browser()
     }
 

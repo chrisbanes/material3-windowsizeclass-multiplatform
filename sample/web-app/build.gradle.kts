@@ -14,12 +14,20 @@ compose {
 }
 
 kotlin {
-    js(IR) {
-        browser()
+    @Suppress("OPT_IN_USAGE")
+    wasmJs {
+        browser {
+            commonWebpackConfig {
+                outputFileName = "sample.js"
+            }
+
+        }
+
         binaries.executable()
     }
+
     sourceSets {
-        val jsMain by getting {
+        val commonMain by getting {
             dependencies {
                 implementation(project(":sample:shared"))
             }

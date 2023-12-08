@@ -40,6 +40,11 @@ kotlin {
         browser()
     }
 
+    @Suppress("OPT_IN_USAGE")
+    wasmJs {
+        browser()
+    }
+
     configure(targets) {
         if (this is KotlinNativeTarget && konanTarget.family.isAppleFamily) {
             compilations.getByName("main") {
