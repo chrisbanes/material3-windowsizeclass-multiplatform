@@ -3,6 +3,7 @@
 
 
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 
 plugins {
     kotlin("multiplatform")
@@ -15,6 +16,7 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     jvm()
+
     androidTarget {
         publishLibraryVariants("release")
 
@@ -25,22 +27,15 @@ kotlin {
         }
     }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64(),
-    ).forEach {
-        it.binaries.framework {
-            baseName = "lib"
-            isStatic = true
-        }
-    }
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
 
     js(IR) {
         browser()
     }
 
-    @Suppress("OPT_IN_USAGE")
+    @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         browser()
     }
