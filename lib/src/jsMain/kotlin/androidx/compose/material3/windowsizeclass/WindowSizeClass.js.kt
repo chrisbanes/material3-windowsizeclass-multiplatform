@@ -20,7 +20,7 @@ import org.w3c.dom.events.Event
 actual fun calculateWindowSizeClass(): WindowSizeClass {
     var windowSizeClass by remember {
         mutableStateOf(
-            WindowSizeClass.calculateFromSize(window.getDpSize())
+            WindowSizeClass.calculateFromSize(window.getDpSize()),
         )
     }
 
