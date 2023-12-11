@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -14,7 +15,14 @@ plugins {
 kotlin {
     applyDefaultHierarchyTemplate()
 
-    jvm()
+    jvm {
+        compilations.all {
+            compilerOptions.configure {
+                jvmTarget.set(JvmTarget.JVM_1_8)
+            }
+        }
+    }
+
     androidTarget {
         publishLibraryVariants("release")
 
