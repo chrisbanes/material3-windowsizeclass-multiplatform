@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - compose-mp-1.6.0
   pull_request:
 
 jobs:

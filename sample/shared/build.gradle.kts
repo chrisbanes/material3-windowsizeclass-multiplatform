@@ -2,6 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+
+// Copyright 2023, Christopher Banes and the project contributors
+// SPDX-License-Identifier: Apache-2.0
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -22,6 +27,11 @@ kotlin {
     }
 
     js(IR) {
+        browser()
+    }
+
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
         browser()
     }
 
