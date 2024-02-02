@@ -3,15 +3,15 @@
 
 
 plugins {
-    id("com.android.library") version "8.2.0" apply false
-    id("com.android.application") version "8.2.0" apply false
+    id("com.android.library") version "8.2.2" apply false
+    id("com.android.application") version "8.2.2" apply false
 
-    kotlin("multiplatform") version "1.9.21" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.21" apply false
-    id("org.jetbrains.compose") version "1.6.0-alpha01" apply false
+    kotlin("multiplatform") version "1.9.22" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+    id("org.jetbrains.compose") version "1.6.0-beta01" apply false
 
     id("com.diffplug.spotless") version "6.21.0"
-    id("com.vanniktech.maven.publish") version "0.25.3"
+    id("com.vanniktech.maven.publish") version "0.27.0"
 }
 
 allprojects {
