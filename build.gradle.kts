@@ -10,7 +10,7 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
     id("org.jetbrains.compose") version "1.6.0-beta02" apply false
 
-    id("com.diffplug.spotless") version "6.21.0"
+    id("com.diffplug.spotless") version "6.25.0"
     id("com.vanniktech.maven.publish") version "0.27.0"
 }
 
@@ -19,9 +19,7 @@ allprojects {
 
     spotless {
         kotlin {
-            target("**/*.kt")
-            targetExclude("$buildDir/**/*.kt")
-            targetExclude("bin/**/*.kt")
+            target("src/**/*.kt")
             ktlint()
 
             licenseHeaderFile(rootProject.file("spotless/cb-copyright.txt"))
@@ -33,8 +31,7 @@ allprojects {
         }
 
         kotlinGradle {
-            target("**/*.kts")
-            targetExclude("$buildDir/**/*.kts")
+            target("*.kts")
             ktlint()
 
             licenseHeaderFile(rootProject.file("spotless/cb-copyright.txt"), "(^(?![\\/ ]\\**).*$)")

@@ -4,5 +4,7 @@
 package dev.chrisbanes.material3.windowsizeclass.sample
 
 import androidx.compose.ui.window.ComposeUIViewController
+import platform.UIKit.UIViewController
 
-fun MainViewController() = ComposeUIViewController { Sample() }
+@Suppress("FunctionName")
+fun MainViewController(): UIViewController = ComposeUIViewController { Sample() }
