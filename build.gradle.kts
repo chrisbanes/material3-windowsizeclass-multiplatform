@@ -8,7 +8,7 @@ plugins {
 
     kotlin("multiplatform") version "1.9.22" apply false
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
-    id("org.jetbrains.compose") version "1.6.0" apply false
+    id("org.jetbrains.compose") version "1.6.1" apply false
 
     id("com.diffplug.spotless") version "6.25.0"
     id("com.vanniktech.maven.publish") version "0.28.0"
