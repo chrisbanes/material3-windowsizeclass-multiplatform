@@ -4,12 +4,11 @@ on:
   push:
     branches:
       - main
-      - compose-mp-1.6.0
   pull_request:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-14
     timeout-minutes: 45
 
     steps:
@@ -22,7 +21,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: 17
+          java-version: 21
 
       - uses: gradle/gradle-build-action@v2
         with:
@@ -33,10 +32,13 @@ jobs:
           ./gradlew \
               spotlessCheck \
               jvmTest \
-              linkIosX64 \
+              linkIosArm64 \
               :sample:android-app:assemble \
               :sample:desktop-app:assemble \
-              -x linkDebugTestIosX64
+              :sample:web-js-app:assemble \
+              :sample:web-wasm-app:assemble \
+              -x linkDebugTestIosArm64 \
+              --no-configuration-cache
 
       - name: Deploy to Sonatype
         if: github.event_name == 'push' # only deploy for pushed commits (not PRs)
