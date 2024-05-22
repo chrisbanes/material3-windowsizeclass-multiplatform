@@ -24,7 +24,19 @@ import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 fun MyApplication() {
     val windowSizeClass = calculateWindowSizeClass()
 
-    // TODO: use windowSizeClass
+    // Example of how to change the font size based on the screen width
+    val fontSize = when (windowSizeClass.widthSizeClass) {
+        WindowWidthSizeClass.Compact -> 16.sp
+        WindowWidthSizeClass.Medium -> 24.sp
+        else -> 30.sp
+    }
+
+    Column( /* ... */) {  
+        Box (/* ... */){
+            Image (/* ... */)
+            Text (fontSize = fontSize)
+        }
+    }
 }
 ```
 
