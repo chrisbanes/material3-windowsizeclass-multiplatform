@@ -7,12 +7,6 @@ plugins {
     id("org.jetbrains.compose")
 }
 
-compose {
-    experimental {
-        web.application {}
-    }
-}
-
 kotlin {
     js(IR) {
         browser()
