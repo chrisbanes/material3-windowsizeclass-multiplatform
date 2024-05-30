@@ -64,7 +64,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.window:window:1.2.0")
+                implementation("androidx.window:window:1.3.0")
             }
         }
 
