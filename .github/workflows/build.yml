@@ -28,21 +28,11 @@ jobs:
           gradle-home-cache-cleanup: true
 
       - name: Build
-        run: |
-          ./gradlew \
-              spotlessCheck \
-              jvmTest \
-              linkIosArm64 \
-              :sample:android-app:assemble \
-              :sample:desktop-app:assemble \
-              :sample:web-js-app:assemble \
-              :sample:web-wasm-app:assemble \
-              -x linkDebugTestIosArm64 \
-              --no-configuration-cache
+        run: ./gradlew build --no-configuration-cache
 
       - name: Deploy to Sonatype
         if: github.event_name == 'push' # only deploy for pushed commits (not PRs)
-        run: ./gradlew publish
+        run: ./gradlew publish --no-configuration-cache
         env:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
