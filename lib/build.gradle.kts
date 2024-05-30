@@ -37,6 +37,9 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
+    macosX64()
+    macosArm64()
+
     js(IR) {
         browser()
     }
@@ -50,7 +53,7 @@ kotlin {
         if (this is KotlinNativeTarget && konanTarget.family.isAppleFamily) {
             compilations.getByName("main") {
                 val objc by cinterops.creating {
-                    defFile(project.file("src/iosMain/def/objc.def"))
+                    defFile(project.file("src/appleMain/def/objc.def"))
                 }
             }
         }
@@ -64,7 +67,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.window:window:1.2.0")
+                implementation("androidx.window:window:1.3.0")
             }
         }
 
