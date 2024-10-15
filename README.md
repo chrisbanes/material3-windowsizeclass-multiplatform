@@ -1,3 +1,10 @@
+# Deprecated
+
+This library is now deprecated, as JetBrains have released their own version as part of [Compose Multiplatform 1.7.0](https://www.jetbrains.com/help/kotlin-multiplatform-dev/whats-new-compose-170.html#material3-material3-window-size-class). See the [tracking issue](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/issues/100) for more info.
+
+---
+
+
 [![Maven Central](https://img.shields.io/maven-central/v/dev.chrisbanes.material3/material3-window-size-class-multiplatform)](https://search.maven.org/search?q=g:dev.chrisbanes.material3) ![Build status](https://github.com/chrisbanes/material3-windowsizeclass-multiplatform/actions/workflows/build.yml/badge.svg)
 
 ## Compose Multiplatform: Material 3 Window Size Class
